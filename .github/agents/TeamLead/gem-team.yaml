@@ -1,0 +1,44 @@
+# gem-team configuration
+# Co-located resource for the TeamLead agent (.github/agents/TeamLead.agent.md).
+# Keep this file at .github/agents/TeamLead/gem-team.yaml so it ships with the agent.
+# This file contains user-configurable settings for gem-team behavior.
+# See https://github.com/mubaidr/gem-team#configuration
+
+# ═══════════════════════════════════════════════════════════
+# ORCHESTRATOR BEHAVIOR
+# ═══════════════════════════════════════════════════════════
+orchestrator:
+  # Maximum number of agents that can run in parallel
+  # Higher = faster execution, but more rps/ rpm usage
+  max_concurrent_agents: 2
+
+  # Force all tasks to this complexity level; 'auto' = let orchestrator decide
+  # TRIVIAL/LOW = faster, fewer steps | MEDIUM/HIGH = more thorough planning & review
+  default_complexity_threshold: auto
+
+  # Git commit wave output on integration gate pass
+  # Clean audit trail per wave; skip if not desired
+  git_commit_on_gate_pass: true
+
+# ═══════════════════════════════════════════════════════════
+# PLANNING & WORKFLOW
+# ═══════════════════════════════════════════════════════════
+planning:
+  # Run gem-critic (challenge assumptions, find edge cases) for these complexities
+  # TRIVIAL/LOW/MEDIUM/HIGH
+  enable_critic_for: [HIGH]
+
+# ═══════════════════════════════════════════════════════════
+# DEVOPS & DEPLOYMENT
+# ═══════════════════════════════════════════════════════════
+devops:
+  # Require explicit approval for these environments
+  # staging/production | empty array = no approval required
+  approval_required_for: [production]
+
+  # Default deployment strategy
+  # rolling | blue_green | canary
+  deployment_strategy: rolling
+
+  # Automatically rollback deployment on failure
+  auto_rollback_on_failure: false
