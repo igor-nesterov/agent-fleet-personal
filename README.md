@@ -3,6 +3,15 @@
 Personal-project agents, skills, and instructions for GitHub Copilot.
 See the [fleet catalog](.github/README.md) for specialist roles and routing.
 
+## Mantine frontend skills
+
+- [frontend-engineer](.github/agents/frontend-engineer.agent.md) loads matching bundled Mantine skills on demand.
+- [Combobox](.github/skills/mantine-combobox/SKILL.md): custom select-like components.
+- [Forms](.github/skills/mantine-form/SKILL.md): validation, nested fields, and form context.
+- [Custom components](.github/skills/mantine-custom-components/SKILL.md): theming and Styles API.
+- Skills target Mantine 9.x; existing projects keep their UI library and dependency versions.
+- [Sources, Node recommendation, refresh, and checks](.github/skills/mantine-upstream.md).
+
 ## Optional Azure tooling
 
 [.mcp.json](.mcp.json) configures the public Azure MCP server.

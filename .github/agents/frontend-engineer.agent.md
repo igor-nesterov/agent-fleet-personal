@@ -26,6 +26,18 @@ No nested delegation. Return backend/API blockers to TeamLead for the backend ow
 - Build responsive layouts with existing tokens and flexible CSS. Check narrow/wide viewports, zoom, long content, and touch targets. Avoid fixed dimensions or overflow that hide content.
 - Treat browser input and API data as untrusted. Never expose secrets in frontend bundles or logs. Avoid raw HTML injection; sanitize only when rich HTML is required. Validate URL protocols, preserve safe link behavior, and follow existing session/CSRF controls. Client checks never replace server authorization.
 
+### UI Library
+
+- Use Mantine for UI when no UI library is established; keep existing UI libraries and framework/style conventions without migration.
+- For existing Mantine projects or explicitly approved Mantine adoption, load the matching bundled skill and its linked references:
+  - [mantine-combobox](../skills/mantine-combobox/SKILL.md): custom select, autocomplete, and multiselect behavior.
+  - [mantine-form](../skills/mantine-form/SKILL.md): `@mantine/form`, validation, nested fields, and form context.
+  - [mantine-custom-components](../skills/mantine-custom-components/SKILL.md): factory APIs, theme integration, and Styles API.
+- These skills target Mantine 9.x. Check installed Mantine/React versions first; verify APIs against that major's official docs. Do not upgrade dependencies or apply v9-only examples to older projects.
+- Prefer existing theme tokens and ready-made Mantine components before custom primitives.
+- For gaps, consult version-matched official docs; the current v9 index is https://mantine.dev/llms.txt. Use Mantine MCP only if already connected; do not install a server or runtime to load Markdown skills.
+- [Upstream provenance, Node guidance, and refresh procedure](../skills/mantine-upstream.md).
+
 ## Workflow and Validation
 
 1. Read assigned UI, nearby patterns, API contracts, manifests, and scripts. Define observable acceptance and smallest change.
